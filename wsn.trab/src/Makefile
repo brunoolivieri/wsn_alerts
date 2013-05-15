@@ -1,0 +1,9 @@
+COMPONENT=alarmGroupAppC
+#SENSORBOARD=mda100
+
+SENSORBOARD=mts300
+#PFLAGS=-DCC1K_DEF_FREQ=916400000
+# so pro mica 2
+
+
+include $(MAKERULES)

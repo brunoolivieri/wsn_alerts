@@ -1,0 +1,13 @@
+COMPONENT=serverAppC
+SENSORBOARD=mts300
+PFLAGS=-DCC1K_DEF_FREQ=916400000
+
+BUILD_EXTRA_DEPS = requestMsg.java returnMsg.java
+
+requestMsg.java: simpleCS.h 
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=requestMsg simpleCS.h requestMsg -o $@
+
+returnMsg.java: simpleCS.h 
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=returnMsg simpleCS.h returnMsg -o $@
+
+include $(MAKERULES)
